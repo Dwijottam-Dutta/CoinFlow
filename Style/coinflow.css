@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik",sans-serif;
+}
+#confetti-canvas {
+    position:absolute;
+    top:0;
+  }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FF616D;
+}
+.container{
+    background: rgba( 255, 255, 255, 0.40 );
+    width: 400px;
+    padding: 40px;
+    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+}
+h1{
+    text-align: center;
+    padding-bottom: 10px;
+    font-family: 'Comfortaa', cursive;
+}
+.stats{
+    text-align: right;
+    color: #101020;
+    font-weight: 500;
+    line-height: 25px;
+}
+.coin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+    margin-bottom: 20px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+.coin img{
+    width: 100%;
+    height: 100%;
+}
+.heads,.tails{
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.tails{
+    transform: rotateX(180deg);
+}
+@keyframes spin-tails{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1980deg);
+    }
+}
+@keyframes spin-heads{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2160deg);
+    }
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    width: 120px;
+    padding: 10px 0;
+    border: 2.5px solid #D83A56;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#flip-button{
+    background-color: #FF616D;
+    color: #ffffff;
+}
+#flip-button:disabled{
+    background: rgba( 255, 255, 255, 0.40 );
+    border-color: rgba(255, 255, 255, 0.637);
+    color: #101020;
+}
+#reset-button{
+    background: rgba( 255, 255, 255, 0.40 );
+    color: #D83A56;
+}
